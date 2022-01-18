@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Primera interfaz de nuestra página
+Incluye un formulario donde escribimos nuestro usuario y contraseña(caso de que ya estuviesemos registrados)
+Dos botones : 1º) Botón submit -> secomprueba si el usuario esta en la base de datos
+              2º) Boton rexistrar(debe ser una URL) -> se abre un nuevo html que contiene un formulario nuevo   --> 
+    <h1>
+        Bienvenido a la librería 
+    </h1>
+
+    <!-- Aquí se encuentra el formulario inicial 
+    Dos inputs : uno para el nombe otro, para la contraseña
+    se usuarán para Loguearse-->
+    <form name="formulario" method="get" action="auxiliar.php">
+        <div>
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario">
+        </div>
+        <div>
+            <label for="contrasena">Contraseña</label>
+            <input type="text" id="contrasena" name="contrasena"> 
+        </div>
+        <input type="submit" class="submit" id="submit" value="Enviar" />
+    </form>
+    <a href="rexistro.html">-> Click aiqui para poder rexistrarse como novo usuario</a>
+
+</body>
+</html>
