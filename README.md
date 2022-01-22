@@ -4,11 +4,11 @@
 
 ### Tecnologías empleadas
 #### En este proyecto se emplean las siguientes tecnologias 
- -PHP 
- -MariaDB
- -HTML
- -CSS
- -XAMPP
+ - PHP 
+ - MariaDB
+ - HTML
+ - CSS
+ - XAMPP
  
 ---
 *Recursos empleados:*<br>
