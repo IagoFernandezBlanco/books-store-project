@@ -20,28 +20,28 @@
     </h1>    
     <form name="formulario" action="auxiliar.php">
         <div>
-            <label for="">Nome usuario</label>
-            <input type="text">
+            <label for="usuario">Nome usuario</label>
+            <input type="text" name="usuario" id="usuario">
         </div>
         <div>
-            <label for="">Contrasinal</label>
-            <input type="text">
+            <label for="contrasinal">Contrasinal</label>
+            <input type="text" name="contrasinal" id="contrasinal">
         </div>
         <div>
-            <label for="">Nome</label>
-            <input type="text">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
         </div>
         <div>
-            <label for="">Direccion</label>
-            <input type="text">
+            <label for="direccion">Direccion</label>
+            <input type="text" name="direccion" id="direccion">
         </div>
         <div>
-            <label for="">Telefono</label>
-            <input type="text">
+            <label for="telefono">Telefono</label>
+            <input type="number" name="telefono" id="telefono">
         </div>
         <div>
-            <label for="">DNI </label>
-            <input type="text">
+            <label for="dni">DNI</label>
+            <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]{1}">
         </div>
         <input type="submit" class="submit" id="submit" value="Enviar" />
     </form>
