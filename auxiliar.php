@@ -18,8 +18,13 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+$query_usuario_nombre = "SELECT * from usuario where usuario ='".$usuario."'";
+$resultado_query = mysqli_query($conn, $query_usuario_nombre);
+$numFilas = $resultado_query->num_rows;
 
-
+if($numFilas > 0){
+    header("Location: rexistro.html");
+}else{
 // En la variable $insert_query se ha creado la accion de inserccion en la tabla usuarios
 //Se empelan las variables recibidas desde el html y se insertan como VALUES de mi insercción
 $insert_query = "INSERT INTO novo_rexistro(usuario, contrasinal, nome, direccion, telefono, nifdni)
@@ -29,6 +34,9 @@ VALUES ('".$usuario."','".$contrasena."','".$nome."','".$direccion."',".$telefon
 If (mysqli_query($conn, $insert_query)) {
  header("Location: index.html");
 }
+}
+
+
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);
 ?>
