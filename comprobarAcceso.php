@@ -19,26 +19,24 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully ";
+
 
 // Comprobar si existe el usuario en la base de datos existetes(tabla usuario)
 // Un select es necesario, y con un numRows se verifica si existe o no
-
 $select_query = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
 
+// La variable result almacena la query_select de antes
+// y numFilas nos da la cantidad exacta de filas que cumple nuestro select
 $result = mysqli_query($conn, $select_query);
 $numFilas = $result->num_rows;
 
-
-for ($x=0;$x<$numFilas;$x++){
-    $fila = mysqli_fetch_array($result);//me traio
-    
-    echo "Nome:" . $fila['usuario'] . "<br/>";
-     echo "Apelido:" . $fila['contrasinal'] . "<br/>";
-     echo "Direccion:" . $fila['direccion'] . "<br/>";
-     echo "<br/>";
-    }
-    
+// Si las filas son mayores de 0, significa que nuestro usuario esta registrado y pasa a la siguiente fase
+// Si las filas son 0, el usuario no está registraod y regresa a la primera página
+if($numFilas > 0){
+    header("Location: libros.html");
+}else{
+    header("Location: index.html");
+}
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);
 ?>
