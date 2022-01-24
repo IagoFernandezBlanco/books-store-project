@@ -18,7 +18,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully ";
+
 
 // En la variable $insert_query se ha creado la accion de inserccion en la tabla usuarios
 //Se empelan las variables recibidas desde el html y se insertan como VALUES de mi insercción
@@ -27,7 +27,7 @@ VALUES ('".$usuario."','".$contrasena."','".$nome."','".$direccion."',".$telefon
 
 // En caso de que la inserccion saliese correctamente, salta este mensaje por pantalla
 If (mysqli_query($conn, $insert_query)) {
- echo 'Foi todo ben na inserción';
+ header("Location: index.html");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);

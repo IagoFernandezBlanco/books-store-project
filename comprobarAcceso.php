@@ -35,7 +35,7 @@ $numFilas = $result->num_rows;
 if($numFilas > 0){
     header("Location: libros.html");
 }else{
-    header("Location: index.html");
+    header("Location: rexistro.html");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);
