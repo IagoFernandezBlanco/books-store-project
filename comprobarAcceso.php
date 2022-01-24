@@ -23,19 +23,28 @@ if (!$conn) {
 
 // Comprobar si existe el usuario en la base de datos existetes(tabla usuario)
 // Un select es necesario, y con un numRows se verifica si existe o no
-$select_query = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
+$select_query_nombre = "SELECT * from usuario where usuario ='".$usuario."'";
+
+// $select_query = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
 
 // La variable result almacena la query_select de antes
 // y numFilas nos da la cantidad exacta de filas que cumple nuestro select
-$result = mysqli_query($conn, $select_query);
+$result = mysqli_query($conn, $select_query_nombre);
 $numFilas = $result->num_rows;
 
 // Si las filas son mayores de 0, significa que nuestro usuario esta registrado y pasa a la siguiente fase
 // Si las filas son 0, el usuario no está registraod y regresa a la primera página
-if($numFilas > 0){
-    header("Location: libros.html");
-}else{
+if($numFilas < 1){
     header("Location: rexistro.html");
+}else{
+    $select_query_nombre_contrasena = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
+    $result2 = mysqli_query($conn, $select_query_nombre_contrasena);
+    $numFilas2 = $result2->num_rows;
+    if($numFilas2 < 1){
+        header("Location: rexistro.html");
+    }else{
+        header("Location: libros.html");
+    }
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);
