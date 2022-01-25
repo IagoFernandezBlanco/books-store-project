@@ -1,3 +1,7 @@
+<?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +17,7 @@
     </style>
 </head>
 <body>
+       
     <!-- Menu con diversos botones, cada boton redirige a una nueva interfaz
     Botones-libros-aluguer muestra libros a para aalquilar
     Botones-libros-venda muestra libros a la venta
@@ -24,7 +29,7 @@
         <a href="./archivos-html/libros-venda.html"><button type="button" class="botones-libros-venda">Libros Venda</button></a>
         <a href="./archivos-html/libros-aluguer-venda.html"><button type="button" class="botones-libros-aluguer-venda">Libros alugados/vendidos</button></a>
         <a href="./archivos-html/libros-devoltos.html"><button type="button" class="botones-libros-devoltos">Libros devoltos</button></a>
-        <a href="./archivos-html/modificar-usuario.html"><button type=button class="botones-libros-usuario-modificar">Modificar usuario</button></a>
+        <a href="./archivos-html/modificar-usuario.php"><button type=button class="botones-libros-usuario-modificar">Modificar usuario</button></a>
     </div>
 </body>
 </html>

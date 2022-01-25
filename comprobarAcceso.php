@@ -43,7 +43,9 @@ if($numFilas < 1){
     if($numFilas2 < 1){
         header("Location: rexistro.html");
     }else{
-        header("Location: libros.html");
+        session_start();
+        $_SESSION['usuario'] = $_REQUEST['usuario'];
+        header("Location: libros.php");
     }
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
