@@ -30,6 +30,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// Gracias a las sessions, podemos modificar el usuario por su username
+// Modificamos todos los campos, salvo username, y tambien solo el porpio usuario puede modificar sus datos.
 $query_update_usuario = "UPDATE usuario set contrasinal = '".$contrasena."', nome = '".$nome."', direccion ='".$direccion."', telefono ='".$telefono."', nifdni ='".$nifdni."' where usuario = '".$usuario."'"; 
 
 if(mysqli_query($conn, $query_update_usuario)){

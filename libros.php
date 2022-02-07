@@ -26,7 +26,7 @@ echo "Hola " .$_SESSION['usuario'];
     Botones-libros-modificar el usuario puede modificar sus datos, salvo el usuario-->
     <div class="botones-libros">
         <a href="./archivos-html/libros-aluguer.html"><button type="button" class="botones-libros-aluguer">Libros Aluguer</button></a>
-        <a href="./archivos-html/libros-venda.html"><button type="button" class="botones-libros-venda">Libros Venda</button></a>
+        <a href="./archivos-html/libros-venda.php"><button type="button" class="botones-libros-venda">Libros Venda</button></a>
         <a href="./archivos-html/libros-aluguer-venda.html"><button type="button" class="botones-libros-aluguer-venda">Libros alugados/vendidos</button></a>
         <a href="./archivos-html/libros-devoltos.html"><button type="button" class="botones-libros-devoltos">Libros devoltos</button></a>
         <a href="./archivos-html/modificar-usuario.php"><button type=button class="botones-libros-usuario-modificar">Modificar usuario</button></a>
