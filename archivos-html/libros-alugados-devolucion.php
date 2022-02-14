@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sección alugar libros</title>
+    <title>Libros alugados devolucion</title>
     <style>
         th, td{
             border: 1px solid black;
@@ -13,7 +14,8 @@
     </style>
 </head>
 <body>
-<h1>Seccion para alugar libros</h1>
+    <h1>Lista de libros alugados actualmente</h1>
+<!-- Comienzo del backend PHP-->
 <?php
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
@@ -27,7 +29,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$libros_aluguer_selector ="SELECT * from libro_aluguer";
+$libros_aluguer_selector ="SELECT * from libro_alugado";
 $result = mysqli_query($conn, $libros_aluguer_selector);
 if(mysqli_num_rows($result)>0):
 ?>
@@ -35,7 +37,7 @@ if(mysqli_num_rows($result)>0):
         <tr >
             <th>Titulo</th>
             <th>Cantidade</th>
-            <th>Editorial</th>
+            <th>Descripcion</th>
             <th>Prezo</th>
             <th>Foto</th>
         </tr>
@@ -44,8 +46,8 @@ if(mysqli_num_rows($result)>0):
         <tr>
             <td><?php echo $row->titulo;?></td>
             <td><?php echo $row->cantidade;?></td>
+            <td><?php echo $row->descripcion?></td>
             <td><?php echo $row->editorial?></td>
-            <td><?php echo $row->prezo?></td>
             <td><img src="<?php echo $row->foto?>" alt=""></td>
         </tr>
         <?php endwhile;?>
@@ -55,17 +57,15 @@ if(mysqli_num_rows($result)>0):
     else: ?>
     <h3>Sin resultados</h3>
     <?php endif;?>
-
-<form action="aceptar_aluguer.php">
-    <div>
-       <label for="titulo">Escribe el titulo del libro que quieras alquilar(fijate si esta disponible o no)</label>
-    </div>
-    <div> 
-       <input type="text" name="titulo" id="titulo">
-    </div>
-    <input type="submit" class="submit" id="submit" value="Enviar" />
-</form>
-<a href="libros.php"><button type="button"> Volver </button></a>
-
+    <form action="libros-devolucion.php">
+        <div>
+            <label for="titulo">Escribe o titulo do libro que queres devoltar</label>
+        </div>
+       <div>
+           <input type="text" name="titulo" id="titulo">
+       </div>
+        <input type="submit" name="submit" id="submit" value="Enviar"/> 
+    </form>
+    <a href="../libros.php"><button type="button"> Volver </button></a>
 </body>
 </html>

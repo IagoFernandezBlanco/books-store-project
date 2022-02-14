@@ -56,6 +56,6 @@ if(mysqli_num_rows($result)>0):
     else: ?>
     <h3>Sin resultados</h3>
     <?php endif;?>
-    <a href="../alugar_libros.php">Seccion de alugar libros</a>
+    <a href="../alugar_libros.php"><button type="button"> Pagina para poder alquilar libros </button></a>
 </body>
 </html>

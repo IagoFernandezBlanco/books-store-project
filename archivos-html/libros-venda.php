@@ -56,6 +56,17 @@ if(mysqli_num_rows($result)>0):
     else: ?>
     <h3>SIn resultados</h3>
     <?php endif;?>
+    <form action="comprar-libros.php">
+        <div>
+            <label for="titulo"> Da lista de libros, escolle o que queres comprar</label>
+        </div>
+        <div>
+            <input type="text" name="titulo" id="titulo">
+        </div>
+        <div>
+            <input type="submit" name="submit" value="Enviar"/>
+        </div>
+    </form>
 </body>
 </html>
 
