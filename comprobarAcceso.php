@@ -45,7 +45,7 @@ if($numFilas < 1){
     }else{
         session_start();
         $_SESSION['usuario'] = $_REQUEST['usuario'];
-        header("Location: libros.php");
+        header("Location: usuarios_libreria.php");
     }
 }
 // Es necesario cerrar la conexion con nuestra base de datos.

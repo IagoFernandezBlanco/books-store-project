@@ -36,7 +36,7 @@ $query_update_usuario = "UPDATE usuario set contrasinal = '".$contrasena."', nom
 
 if(mysqli_query($conn, $query_update_usuario)){
     echo "usuario modified";
-    header("Location: libros.php");
+    header("Location: usuarios_libreria.php");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);

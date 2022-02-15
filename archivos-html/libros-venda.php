@@ -35,6 +35,7 @@ if(mysqli_num_rows($result)>0):
     <table style="border-collapse: collapse;">
         <tr >
             <th>Titulo</th>
+            <th>Cantidade</th>
             <th>Descripcion</th>
             <th>Editorial</th>
             <th>Prezo</th>
@@ -44,6 +45,7 @@ if(mysqli_num_rows($result)>0):
         while ($row=mysqli_fetch_object($result)):?>
         <tr>
             <td><?php echo $row->titulo;?></td>
+            <td><?php echo $row->cantidade;?></td>
             <td><?php echo $row->descripcion;?></td>
             <td><?php echo $row->editorial?></td>
             <td><?php echo $row->prezo?></td>

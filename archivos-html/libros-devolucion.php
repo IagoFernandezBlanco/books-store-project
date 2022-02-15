@@ -39,7 +39,7 @@ $result3 = mysqli_query($conn, $eliminar_libros);
     $insertar_libro = "INSERT INTO libro_devolto(titulo, cantidade, descripcion, editorial, foto) VALUES ('".$titulo_libro."', '".$cantidade_libros_actual."', '".$descripcion_libro."', '".$editorial_libro."', '".$foto_libro."')";
     $result4 =  mysqli_query($conn, $insertar_libro);
 }
-header("Location: ../libros.php");
+header("Location: ../usuarios_libreria.php");
 
 mysqli_close($conn);
 ?>

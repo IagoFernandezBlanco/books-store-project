@@ -66,6 +66,6 @@ if(mysqli_num_rows($result)>0):
        </div>
         <input type="submit" name="submit" id="submit" value="Enviar"/> 
     </form>
-    <a href="../libros.php"><button type="button"> Volver </button></a>
+    <a href="../usuarios_libreria.php"><button type="button"> Volver </button></a>
 </body>
 </html>
