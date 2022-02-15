@@ -37,15 +37,27 @@ $numFilas = $result->num_rows;
 if($numFilas < 1){
     header("Location: rexistro.html");
 }else{
+    // Al ser el numero de filas superior  1 significa que el usuario esta registrado actualemente.
     $select_query_nombre_contrasena = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
     $result2 = mysqli_query($conn, $select_query_nombre_contrasena);
+   
+    while ($row = mysqli_fetch_assoc($result2)) {
+    $tipo_usuario = $row['tipo_usuario'];
     $numFilas2 = $result2->num_rows;
     if($numFilas2 < 1){
         header("Location: rexistro.html");
     }else{
-        session_start();
-        $_SESSION['usuario'] = $_REQUEST['usuario'];
-        header("Location: usuarios_libreria.php");
+        if($tipo_usuario != "u"){
+            session_start();
+            $_SESSION['usuario'] = $_REQUEST ['usuario'];
+            header("Location: administradores.php");
+        }else{
+            session_start();
+            $_SESSION['usuario'] = $_REQUEST['usuario'];
+            header("Location: usuarios_libreria.php");
+        }
+    
+}
     }
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
