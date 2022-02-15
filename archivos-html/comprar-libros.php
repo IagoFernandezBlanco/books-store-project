@@ -34,6 +34,6 @@ while ($row = mysqli_fetch_assoc($result)) {
         $result2 = mysqli_query($conn, $libros_compra);
     }
 }
-header("Location: ../libros.php");
+header("Location: ../usuarios_libreria.php");
 mysqli_close($conn);
 ?>

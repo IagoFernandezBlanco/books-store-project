@@ -16,10 +16,10 @@ echo "Hola " .$_SESSION['usuario'];
     <a href="admitir_nuevos_usuarios.php"><button>Admitir nuevos usuarios</button></a>
     </div>
     <div>
-    <a href="añadir_libro_aluguer.php"><button>Añadir libros aluguer</button></a>
+    <a href="añadir_libro_aluguer.html"><button>Añadir libros aluguer</button></a>
     </div>
     <div>
-    <a href="añadir_libro_venta.php"><button>Añadir libros venda</button></a>
+    <a href="añadir_libro_venda.html"><button>Añadir libros venda</button></a>
     </div>
     <a href="index.html"><button>Volver</button></a>
 </body>

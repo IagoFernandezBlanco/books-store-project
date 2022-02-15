@@ -29,6 +29,7 @@ echo "Hola " .$_SESSION['usuario'];
         <a href="./archivos-html/libros-venda.php"><button type="button" class="botones-libros-venda">Libros Venda</button></a>
         <a href="./archivos-html/libros-alugados-devolucion.php"><button type="button" class="botones-libros-devoltos">Libros alugados que se queren devolver</button></a>
         <a href="./archivos-html/modificar-usuario.php"><button type=button class="botones-libros-usuario-modificar">Modificar usuario</button></a>
+        <a href="index.html"><button>Volver al login</button></a>
     </div>
 </body>
 </html>
