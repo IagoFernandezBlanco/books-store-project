@@ -41,6 +41,7 @@ if($numFilas < 1){
     $select_query_nombre_contrasena = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
     $result2 = mysqli_query($conn, $select_query_nombre_contrasena);
    
+    // Comprobación si un usuario es administrador o no
     while ($row = mysqli_fetch_assoc($result2)) {
     $tipo_usuario = $row['tipo_usuario'];
     $numFilas2 = $result2->num_rows;
