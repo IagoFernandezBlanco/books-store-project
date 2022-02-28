@@ -23,7 +23,8 @@ $resultado_query = mysqli_query($conn, $query_usuario_nombre);
 $numFilas = $resultado_query->num_rows;
 
 if($numFilas > 0){
-    header("Location: rexistro.html");
+    echo "Nombre de usuario ya existentem, escoge otro";
+    header("refresh:3; url = rexistro.html");
 }else{
 // En la variable $insert_query se ha creado la accion de inserccion en la tabla usuarios
 //Se empelan las variables recibidas desde el html y se insertan como VALUES de mi insercción
@@ -32,7 +33,8 @@ VALUES ('".$usuario."','".$contrasena."','".$nome."','".$direccion."',".$telefon
 
 // En caso de que la inserccion saliese correctamente, salta este mensaje por pantalla
 If (mysqli_query($conn, $insert_query)) {
- header("Location: index.html");
+    echo "Usuario registrado";
+    header("refresh:3; url = index.html");
 }
 }
 

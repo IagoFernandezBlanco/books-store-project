@@ -35,6 +35,6 @@ $borrar_usuario_rexistro = "DELETE FROM novo_rexistro where usuario = '".$usuari
 $result3 = mysqli_query($conn, $borrar_usuario_rexistro);
 }
 echo "Usuario admitido";
-header("refresh:5;url=administradores.php");
+header("refresh:3;url=administradores.php");
 mysqli_close($conn);
 ?>

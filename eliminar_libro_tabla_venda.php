@@ -19,7 +19,7 @@ if (!$conn) {
 $borrar_libro_tabla_venda = "DELETE FROM libro_venda where titulo = '".$titulo."'";
 $result = mysqli_query($conn, $borrar_libro_tabla_venda);
 echo "Libro eliminado";
-header("refresh:5;url=eliminar_libros_venda.php");
+header("refresh:3;url=eliminar_libros_venda.php");
 
 mysqli_close($conn);
 ?>

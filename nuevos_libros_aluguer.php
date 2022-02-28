@@ -21,6 +21,7 @@ if (!$conn) {
 }
 $insertar_libro_aluguer = "INSERT INTO libro_aluguer(titulo, cantidade, descripcion, editorial, prezo, foto) VALUES ('".$titulo."', '".$cantidade."', '".$descripcion."', '".$editorial."', '".$prezo."', '".$foto."')";
 $result = mysqli_query($conn, $insertar_libro_aluguer);
-header("Location: administradores.php");
+echo "Nuevo libro en alquiler";
+header("refresh:3; url = administradores.php");
 mysqli_close($conn);
 ?>

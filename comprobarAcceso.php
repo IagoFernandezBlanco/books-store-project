@@ -46,16 +46,19 @@ if($numFilas < 1){
     $tipo_usuario = $row['tipo_usuario'];
     $numFilas2 = $result2->num_rows;
     if($numFilas2 < 1){
-        header("Location: rexistro.html");
+        echo "Usuario inexistente, redirigiendo al registro";
+        header("refresh:3; url = rexistro.html");
     }else{
         if($tipo_usuario != "u"){
             session_start();
             $_SESSION['usuario'] = $_REQUEST ['usuario'];
-            header("Location: administradores.php");
+            echo "Accediendo al menu administrador";
+            header("refresh:3; url = administradores.php");
         }else{
             session_start();
             $_SESSION['usuario'] = $_REQUEST['usuario'];
-            header("Location: usuarios_libreria.php");
+            echo "accediendo al menu de usuario";
+            header("refresh:3; url = usuarios_libreria.php");
         }
     
 }
