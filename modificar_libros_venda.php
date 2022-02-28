@@ -1,10 +1,14 @@
+<?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar libros aluguer</title>
+    <title>Modificar libros venda</title>
     <style>
         th, td{
             border: 1px solid black;
@@ -14,7 +18,7 @@
 </head>
 <body>
     <h1>Lista de libros para alugar actuales</h1>
-<?php
+    <?php
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
 $database = "catalogo";
@@ -27,7 +31,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$libros_venda_selector ="SELECT * from libro_aluguer";
+$libros_venda_selector ="SELECT * from libro_venda";
 $result = mysqli_query($conn, $libros_venda_selector);
 if(mysqli_num_rows($result)>0):
 ?>
@@ -57,12 +61,12 @@ if(mysqli_num_rows($result)>0):
     else: ?>
     <h3>SIn resultados</h3>
     <?php endif;?>
-    <form action="eliminar_libro_tabla_aluguer.php">
+    <form action="modificar_libro_tabla_venda.php">
         <div>
-            <label for="titulo">Titulo del libro a eliminar</label>
+            <label for="titulo">Titulo del libro a modificar</label>
             <input type="text" name="titulo">
         </div>
-        <input type="submit" name="submit" value="Eliminar titulo">
+        <input type="submit" name="submit" value="Modificar titulo">
     </form>
     <a href="administradores.php"><button>Volver menu adminsitrador</button></a>
 </body>
