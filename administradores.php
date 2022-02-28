@@ -39,6 +39,9 @@ echo "Hola " .$_SESSION['usuario'];
     <div>
         <a href="mostrar_libros_aluguer.php"><button>Mostar libros aluguer</button></a>
     </div>  
+    <div>
+        <a href="libros_devoltos.php"><button>Listar libros devoltos</button></a>
+    </div>
     <a href="index.html"><button>Volver</button></a>
 </body>
 </html>
