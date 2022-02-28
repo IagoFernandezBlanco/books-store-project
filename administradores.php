@@ -33,6 +33,12 @@ echo "Hola " .$_SESSION['usuario'];
     <div>
         <a href="modificar_libros_aluguer.php"><button>Modificar libros aluguer</button></a>
     </div>
+    <div>
+        <a href="mostrar_libros_venda.php"><button>Mostrar libros venda</button></a>
+    </div>
+    <div>
+        <a href="mostrar_libros_aluguer.php"><button>Mostar libros aluguer</button></a>
+    </div>  
     <a href="index.html"><button>Volver</button></a>
 </body>
 </html>
