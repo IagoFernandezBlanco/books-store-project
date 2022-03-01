@@ -17,6 +17,9 @@
     <h1>Lista de libros alugados actualmente</h1>
 <!-- Comienzo del backend PHP-->
 <?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+echo "<br>"; 
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
 $database = "catalogo";

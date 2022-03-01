@@ -1,4 +1,7 @@
 <?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+echo "<br>"; 
 // Variables de los libros
 // Se usara el titulo para realizar las insercciones y deletes necesario
 $titulo = $_REQUEST['titulo'];
@@ -41,7 +44,8 @@ $result2 = mysqli_query($conn, $libros_aluguer_actualizar);
 $insertar_libros_alugados = "INSERT INTO libro_alugado(titulo, cantidade, descripcion, editorial, foto) VALUES ('".$titulo_libro."','1','".$descripcion_libro."','".$editorial_libro."','".$foto_libro."')";
 $result3 = mysqli_query($conn, $insertar_libros_alugados);
 }
-header("Location: alugar_libros.php");
+echo "Libro alugado"
+header("refresh:3; url =  alugar_libros.php");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);

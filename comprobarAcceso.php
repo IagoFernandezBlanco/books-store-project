@@ -1,4 +1,5 @@
 <?php
+
 // En esta sección se comprobará si el usuario + contraseña se encuentran registrados en la tabla usuario
 // En caso afirmativo, se abre una nueva interfaz, con diversos botones
 // EN caso negativo, se muestra unh mensaje de error por pantalla y se devuelve a la página inicial

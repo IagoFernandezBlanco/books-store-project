@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     
     
     // Si la cantidad es mayor que cero, hace un update y elimina una unidad
-    if($cantidade_libros_actual > 0){
+    if($cantidade_libros_actual >= 0){
     $cantidade_libros_actualizada = $cantidade_libros_actual + 1;
     $libros_aluguer_actualizar = "UPDATE libro_aluguer set cantidade = '".$cantidade_libros_actualizada."' where titulo = '".$titulo."'";
     $result2 = mysqli_query($conn, $libros_aluguer_actualizar);

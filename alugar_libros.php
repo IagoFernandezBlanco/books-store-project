@@ -15,6 +15,9 @@
 <body>
 <h1>Seccion para alugar libros</h1>
 <?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+echo "<br>"; 
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
 $database = "catalogo";

@@ -1,4 +1,7 @@
 <?php
+session_start();
+echo "Hola " .$_SESSION['usuario'];
+echo "<br>"; 
 // Variables de los libros
 // Se usara el titulo para realizar las insercciones y deletes necesario
 $usuario = $_REQUEST['usuario'];
