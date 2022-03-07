@@ -1,7 +1,3 @@
-<?php
-session_start();
-echo "Hola " .$_SESSION['usuario'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +63,7 @@ if(mysqli_num_rows($result)>0):
             <label for="titulo">Titulo del libro devuelto</label>
             <input type="text" name="titulo">
         </div>
-        <input type="submit" name="submit" value="Modificar titulo">
+        <input type="submit" name="submit" value="Confirmar devolucion">
     </form>
     <a href="administradores.php"><button>Volver menu adminsitrador</button></a>
 </body>

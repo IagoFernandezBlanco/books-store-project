@@ -72,6 +72,7 @@ if(mysqli_num_rows($result)>0):
             <input type="submit" name="submit" value="Enviar"/>
         </div>
     </form>
+    <a href="../usuarios_libreria.php"><button>Volver al menu</button></a>
 </body>
 </html>
 

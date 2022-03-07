@@ -9,8 +9,8 @@ $titulo = $_REQUEST['titulo'];
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
 $database = "catalogo";
-$usuario_base_datos = "root@localhost";
-$contraseña_base_datos = "Iazul123?";
+$usuario_base_datos = "root@127.0.0.1";
+$contraseña_base_datos = "";
 
 // Variable donde se almacena/crea la conexiona 
 $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos, $database);

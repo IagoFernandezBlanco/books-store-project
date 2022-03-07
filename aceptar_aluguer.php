@@ -44,7 +44,7 @@ $result2 = mysqli_query($conn, $libros_aluguer_actualizar);
 $insertar_libros_alugados = "INSERT INTO libro_alugado(titulo, cantidade, descripcion, editorial, foto) VALUES ('".$titulo_libro."','1','".$descripcion_libro."','".$editorial_libro."','".$foto_libro."')";
 $result3 = mysqli_query($conn, $insertar_libros_alugados);
 }
-echo "Libro alugado"
+echo "Libro alugado";
 header("refresh:3; url =  alugar_libros.php");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.

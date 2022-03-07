@@ -10,8 +10,8 @@ $foto = $_REQUEST['foto'];
 // Variables de conexion con la base de datos
 $servername = "localhost";
 $database = "catalogo";
-$usuario_base_datos = "root@localhost";
-$contraseña_base_datos = "Iazul123?";
+$usuario_base_datos = "root@127.0.0.1";
+$contraseña_base_datos = "";
 
 // Variable donde se almacena/crea la conexiona 
 $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos, $database);

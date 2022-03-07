@@ -7,8 +7,8 @@
 // Variables para realizar la conexión a nuestra bas de datos
 $servername = "localhost";
 $database = "catalogo";
-$usuario_base_datos = "root@localhost";
-$contraseña_base_datos = "Iazul123?";
+$usuario_base_datos = "root@127.0.0.1";
+$contraseña_base_datos = "";
 
 // Variables de los campos input de Index.html
 $usuario = $_REQUEST['usuario'];
