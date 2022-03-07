@@ -36,20 +36,22 @@ $numFilas = $result->num_rows;
 // Si las filas son mayores de 0, significa que nuestro usuario esta registrado y pasa a la siguiente fase
 // Si las filas son 0, el usuario no está registraod y regresa a la primera página
 if($numFilas < 1){
-    header("Location: rexistro.html");
+    echo "Usuario no existente";
+    header("refresh:3, url= rexistro.html");
 }else{
     // Al ser el numero de filas superior  1 significa que el usuario esta registrado actualemente.
     $select_query_nombre_contrasena = "SELECT * from usuario where usuario ='".$usuario."' AND contrasinal='".$contrasena."'";
     $result2 = mysqli_query($conn, $select_query_nombre_contrasena);
-   
+    $numFilas2 = $result2->num_rows;
+    if($numFilas2 < 1){
+        echo "Usuario inexistente, contraseña incorrecta, redirigiendo al registro";
+        header("refresh:3; url = rexistro.html");
+    }else{
     // Comprobación si un usuario es administrador o no
     while ($row = mysqli_fetch_assoc($result2)) {
     $tipo_usuario = $row['tipo_usuario'];
     $numFilas2 = $result2->num_rows;
-    if($numFilas2 < 1){
-        echo "Usuario inexistente, redirigiendo al registro";
-        header("refresh:3; url = rexistro.html");
-    }else{
+    }
         if($tipo_usuario != "u"){
             session_start();
             $_SESSION['usuario'] = $_REQUEST ['usuario'];
@@ -64,7 +66,6 @@ if($numFilas < 1){
     
 }
     }
-}
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);
 ?>
