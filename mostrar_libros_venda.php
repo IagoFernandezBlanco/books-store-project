@@ -31,6 +31,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Seleccionando todos los libros a la venta, para poder mostrarlos.
 $libros_venda_selector ="SELECT * from libro_venda";
 $result = mysqli_query($conn, $libros_venda_selector);
 if(mysqli_num_rows($result)>0):

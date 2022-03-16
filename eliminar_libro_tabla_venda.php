@@ -18,7 +18,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
+// Query que permite eliminar un libro por titulo
 $borrar_libro_tabla_venda = "DELETE FROM libro_venda where titulo = '".$titulo."'";
 $result = mysqli_query($conn, $borrar_libro_tabla_venda);
 echo "Libro eliminado";

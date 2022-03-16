@@ -19,7 +19,7 @@ echo "Titulo del libro: " .$_SESSION['titulo'];
     <form action="modificar_datos_libros_venda.php">
         <div>
             <label for="titulo">Titulo del libro</label>    
-            <input type="text" name="titulo" value= "" >
+            <input type="text" name="titulo">
         </div>
         <div>
             <label for="cantidade">Cantidad del libro</label>    

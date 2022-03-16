@@ -35,8 +35,8 @@ if (!$conn) {
 $query_update_usuario = "UPDATE usuario set contrasinal = '".$contrasena."', nome = '".$nome."', direccion ='".$direccion."', telefono ='".$telefono."', nifdni ='".$nifdni."' where usuario = '".$usuario."'"; 
 
 if(mysqli_query($conn, $query_update_usuario)){
-    echo "usuario modified";
-    header("Location: usuarios_libreria.php");
+    echo "usuario modificado";
+    header("refresh:3; url = usuarios_libreria.php");
 }
 // Es necesario cerrar la conexion con nuestra base de datos.
 mysqli_close($conn);

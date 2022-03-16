@@ -18,26 +18,26 @@
     <h1>
         Hola que tal, rexistro do novo usuario.
     </h1>    
-    <form name="formulario" action="rexistro.php">
+    <form name="formulario" action="rexistro.php" method="POST">
         <div>
             <label for="usuario">Nome usuario</label>
-            <input type="text" name="usuario" id="usuario" >
+            <input type="text" name="usuario" id="usuario" required>
         </div>
         <div>
             <label for="contrasinal">Contrasinal</label>
-            <input type="text" name="contrasinal" id="contrasinal" >
+            <input type="password" name="contrasinal" id="contrasinal" required>
         </div>
         <div>
             <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" >
+            <input type="text" name="nome" id="nome" required>
         </div>
         <div>
             <label for="direccion">Direccion</label>
-            <input type="text" name="direccion" id="direccion" >
+            <input type="text" name="direccion" id="direccion" required>
         </div>
         <div>
             <label for="telefono">Telefono</label>
-            <input type="number" name="telefono" id="telefono" >
+            <input type="number" name="telefono" id="telefono" required>
         </div>
         <div>
             <label for="dni">DNI</label>

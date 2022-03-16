@@ -19,7 +19,11 @@ if (!$conn) {
 }
 $selector_libros_devoltos = "SELECT * FROM libro_aluguer where titulo ='".$titulo."'";
 $result = mysqli_query($conn, $selector_libros_devoltos);
-
+$numFilas = $result->num_rows;
+if($numFilas <1){
+    echo "libro inexistente, comprueba el titulo";
+    header("refresh:3;url=libros_devoltos.php");
+}else{
 while ($row = mysqli_fetch_assoc($result)) {
 
     // Recogiendo todos los diferentes campos ue hay en la tabla libros aluguer.
@@ -38,5 +42,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     echo "Titulo devuelto";
     header("refresh:3; url = administradores.php");
     }
+}
 mysqli_close($conn);
 ?>

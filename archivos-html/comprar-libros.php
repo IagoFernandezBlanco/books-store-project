@@ -56,11 +56,14 @@ while ($row = mysqli_fetch_assoc($result3)) {
             $cantidade_libros_actualizada = $cantidade_libros_actual - 1;
             $libros_compra = "UPDATE libro_venda set cantidade = '".$cantidade_libros_actualizada."' where titulo = '".$titulo."'";
             $result2 = mysqli_query($conn, $libros_compra);
+            echo "Compra realizada, generando comprobante";
+            header("refresh:3; url = ../usuarios_libreria.php");
+        }else{
+            echo "Libro agotado";
+            header("refresh:3;url =../usuarios_libreria.php");
         }
     }
 
 }
-echo "Compra realizada, generando comprobante";
-header("refresh:3; url = ../usuarios_libreria.php");
 mysqli_close($conn);
 ?>

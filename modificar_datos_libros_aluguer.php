@@ -26,14 +26,13 @@ if (!$conn) {
 }
 $selector_libros_venda = "SELECT * FROM libro_aluguer";
 $result =  mysqli_query($conn, $selector_libros_venda);
-
 $numFilas = $result->num_rows;
 
 if($numFilas > 0){
-$modificar_datos_libro_aluguer = "UPDATE libro_aluguer set titulo = '".$titulo."', cantidade = '".$cantidade."', descripcion = '".$descripcion."', editorial = '".$editorial."', prezo = '".$prezo."', foto = '".$foto."' where titulo = '".$_SESSION['titulo']."'";
+$modificar_datos_libro_aluguer = "UPDATE libro_aluguer set titulo = '".$_SESSION['titulo']."', cantidade = '".$cantidade."', descripcion = '".$descripcion."', editorial = '".$editorial."', prezo = '".$prezo."', foto = '".$foto."' where titulo = '".$_SESSION['titulo']."'";
 $result2 = mysqli_query($conn, $modificar_datos_libro_aluguer);
 echo "Datos del libro " .$_SESSION['titulo']. " han sido modificados";
-header("refresh:5;url=administradores.php");
+header("refresh:3;url=administradores.php");
 }
 mysqli_close($conn);
 ?>

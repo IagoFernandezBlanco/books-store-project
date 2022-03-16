@@ -30,6 +30,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Select de la tabla libro_devolto
 $libros_venda_selector ="SELECT * from libro_devolto";
 $result = mysqli_query($conn, $libros_venda_selector);
 if(mysqli_num_rows($result)>0):
@@ -41,6 +42,7 @@ if(mysqli_num_rows($result)>0):
             <th>Descripcion</th>
             <th>Editorial</th>
             <th>Foto</th>
+            <th>Usuario que alquilo el libro</th>
         </tr>
         <?php
         while ($row=mysqli_fetch_object($result)):?>
@@ -50,13 +52,14 @@ if(mysqli_num_rows($result)>0):
             <td><?php echo $row->descripcion;?></td>
             <td><?php echo $row->editorial?></td>
             <td><img src="<?php echo $row->foto?>" alt=""></td>
+            <td><?php echo $row->usuario;?></td>
         </tr>
         <?php endwhile;?>
          
     </table>  
     <?php
     else: ?>
-    <h3>SIn resultados</h3>
+    <h3>Sin resultados</h3>
     <?php endif;?>
     <form action="aceptar_libros_devoltos.php">
         <div>

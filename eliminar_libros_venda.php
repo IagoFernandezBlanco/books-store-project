@@ -30,6 +30,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Select de toda la tabla de libro_venda, para poder mostrar todos los libros
 $libros_venda_selector ="SELECT * from libro_venda";
 $result = mysqli_query($conn, $libros_venda_selector);
 if(mysqli_num_rows($result)>0):
@@ -67,6 +68,6 @@ if(mysqli_num_rows($result)>0):
         </div>
         <input type="submit" name="submit" value="Eliminar titulo">
     </form>
-    <a href="administradores.php"><button>Volver menu adminsitrador</button></a>
+    <a href="administradores.php"><button>Volver menu administrador</button></a>
 </body>
 </html>

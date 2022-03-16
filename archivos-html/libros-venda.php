@@ -69,7 +69,7 @@ if(mysqli_num_rows($result)>0):
             <input type="text" name="titulo" id="titulo">
         </div>
         <div>
-            <input type="submit" name="submit" value="Enviar"/>
+            <input type="submit" name="submit" value="Comprar"/>
         </div>
     </form>
     <a href="../usuarios_libreria.php"><button>Volver al menu</button></a>

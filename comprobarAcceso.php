@@ -52,12 +52,14 @@ if($numFilas < 1){
     $tipo_usuario = $row['tipo_usuario'];
     $numFilas2 = $result2->num_rows;
     }
+    // Si el campo tipo_usuario es igual a distinto a u (a) --> se abre el menu de administrador
         if($tipo_usuario != "u"){
             session_start();
             $_SESSION['usuario'] = $_REQUEST ['usuario'];
             echo "Accediendo al menu administrador";
             header("refresh:3; url = administradores.php");
         }else{
+            // Si el tipo_usuario es igual a u, --> se abre el menu de usuario
             session_start();
             $_SESSION['usuario'] = $_REQUEST['usuario'];
             echo "accediendo al menu de usuario";

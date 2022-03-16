@@ -19,6 +19,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+// Insertación en la tabla de libro_venda, añadiendo un libro nuevo
 $insertar_libro_aluguer = "INSERT INTO libro_venda(titulo, cantidade, descripcion, editorial, prezo, foto) VALUES ('".$titulo."', '".$cantidade."', '".$descripcion."', '".$editorial."', '".$prezo."', '".$foto."')";
 $result = mysqli_query($conn, $insertar_libro_aluguer);
 echo "Nuevo libro a la venta";

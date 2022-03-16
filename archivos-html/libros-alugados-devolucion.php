@@ -32,7 +32,7 @@ $conn = mysqli_connect($servername, $usuario_base_datos, $contraseña_base_datos
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-$libros_aluguer_selector ="SELECT * from libro_alugado";
+$libros_aluguer_selector ="SELECT * from libro_alugado where usuario = '".$_SESSION['usuario']."'";
 $result = mysqli_query($conn, $libros_aluguer_selector);
 if(mysqli_num_rows($result)>0):
 ?>

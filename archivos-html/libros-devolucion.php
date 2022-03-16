@@ -20,7 +20,10 @@ if (!$conn) {
 }
 $libros_alugados = "SELECT * from libro_alugado where titulo ='".$titulo."'";
 $result = mysqli_query($conn, $libros_alugados);
-
+$numFilas = $result->num_rows;
+// Comprobando si el tlibro por titulo existe o no
+//Caso afirmativo
+if ($numFilas > 0){
 // Con esta linea, recojo los valores del resultado del select
 while ($row = mysqli_fetch_assoc($result)) {
     // Recogiendo todos los diferentes campos ue hay en la tabla libros aluguer.
@@ -29,21 +32,30 @@ while ($row = mysqli_fetch_assoc($result)) {
     $descripcion_libro = $row['descripcion'];
     $titulo_libro = $row['titulo'];
     $foto_libro = $row['foto'];
-
+    
+    // Si la cantidad es mayor que cero, resta una unidad y luego borras de la tabla libro-alugado los libros con cantidad = 0
     if($cantidade_libros_actual > 0){
         $cantidade_libros_actualizada = $cantidade_libros_actual -1;
         $libros_devolucion = "UPDATE libro_alugado set cantidade = '".$cantidade_libros_actualizada."' where titulo = '".$titulo."'";
         $result2 = mysqli_query($conn, $libros_devolucion);
-    }
-$eliminar_libros = "DELETE FROM libro_alugado where cantidade = 0";
-$result3 = mysqli_query($conn, $eliminar_libros);
     
+        $eliminar_libros = "DELETE FROM libro_alugado where cantidade = 0";
+        $result3 = mysqli_query($conn, $eliminar_libros);
 
-$insertar_libro = "INSERT INTO libro_devolto(titulo, cantidade, descripcion, editorial, foto) VALUES ('".$titulo_libro."', '".$cantidade_libros_actual."', '".$descripcion_libro."', '".$editorial_libro."', '".$foto_libro."')";
-$result4 =  mysqli_query($conn, $insertar_libro);
+        // insertar en la tabla libro_devolto, a la espera de un admin
+        $insertar_libro = "INSERT INTO libro_devolto(titulo, cantidade, descripcion, editorial, foto, usuario) VALUES ('".$titulo_libro."', '".$cantidade_libros_actual."', '".$descripcion_libro."', '".$editorial_libro."', '".$foto_libro."', '".$_SESSION['usuario']."')";
+        $result4 =  mysqli_query($conn, $insertar_libro);
+
+        echo "Libro devuelto, a la espera de un administrador para confirmar";
+        header("refresh:3; url = ../usuarios_libreria.php");
+    }
 }
-echo "Libro devuelto, a la espera de un administrador para confirmar";
-header("refresh:3; url = ../usuarios_libreria.php");
+}else{
+    // Caso negativo, no existe el libro recoigod en el formulario
+        echo "No has seleccionado un titulo que tu hayas alquilado";
+        header("refresh:3; url = libros-alugados-devolucion.php");
+    }
+
 
 mysqli_close($conn);
 ?>
